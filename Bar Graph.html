@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+				<title>Bar Char Test</title>
+				<style type="text/css">
+
+.barChart rect {
+		stroke: white;
+		fill: steelblue;
+}
+.mutipleBarChart rect {
+		stroke: white;
+}
+
+.barChart line {
+		stroke: steelblue;
+}
+
+.parallelCoordinates{
+	font: 10px sans-serif;
+}
+
+.parallelCoordinates .background path {
+	fill: none;
+	stroke-opacity: .5;
+	shape-rendering: crispEdges;
+}
+
+.parallelCoordinates .foreground path {
+	fill: none;
+	stroke-opacity: .8;
+}
+
+.parallelCoordinates .brush .extent {
+	fill-opacity: .8;
+	stroke: #fff;
+	shape-rendering: crispEdges;
+}
+
+.parallelCoordinates .axis line, .parallelCoordinates .axis path {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.parallelCoordinates .axis text {
+	text-shadow: 0 1px 0 #fff;
+}
+
+		</style>
+		</head>
+
+		<body>
+				<script type="text/javascript" src="d3.js"></script>
+				<script type="text/javascript" src="d3.layout.js"></script>
+				<script type="text/javascript" src="d3.geom.js"></script>
+				<script type="text/javascript" src="d3.csv.js"></script>
+				<script type="text/javascript" src="Convert Data.js"></script>
+				<script type="text/javascript" src="Pie Chart.js"></script>
+				<script type="text/javascript" src="Bar Graph.js"></script>
+				<script type="text/javascript" src="Mutiple Bar Graph.js"></script>
+				<script type="text/javascript" src="Heat Map.js"></script>
+				<script type="text/javascript" src="Scatter Plot.js"></script>
+				<script type="text/javascript" src="Analysis.js"></script>
+				<script type="text/javascript" src="Parrallel Coordinates.js"></script>
+				<script type="text/javascript" src="numeric.js"></script>
+				<script type="text/javascript">
+						d3.csv("./Images/demotivational-posters-bad-newsX50Y36.csv", function(datalong) {
+								/*var options={height:500,width:750,margins:[30,10,10,10],tag:"chart1",allowBrush:true,image:true}
+								makeParallel(datalong,options);*/
+
+								/*data=convertDataWithClasses(datalong)['data']
+								var K=makeKernel(data,getPolyKernel(1));
+								var l=bestkKernelK(K,3,0,10);
+								var options={height:500,width:750,margins:[30,10,10,10],tag:"chart1",klabels:l,useklabels:true};
+								drawParallel(data,options);*/
+								var data=[[1,2],[3,4],[5,6,[7,8]]];
+								var options={height:5000,width:5000,margins:[30,10,10,10],tag:"chart10",radius:300,colors:["#0090FF","#FF0000","#FFD300"]};
+								makePieChart(data,options);
+
+        				/*data=convertDataWithClasses(datalong)['data'];
+								var options={height:500,width:750,margins:[30,10,10,10],tag:"chart1",allowBrush:true,runkmeans:false,runEM:true,k:3,epsEM:.001,iterations:3,maxiterations:100,basicEMLabels:false,minWeight:0,orderData:true}
+								makeParallel(data,options);*/
+
+								/*var options={height:500,width:500,margins:[10,10,10,10],tag:"chart2",class:"scatterPlot",nticks:10,showleastsquares:true,power:1,numPlottingPoints:50,interColor:"#00F"}
+								makeScatterPlot(datalong,options);
+
+								var options={height:500,width:500,margins:[10,10,10,10],tag:"chart3",colors:["#f00","#0f0","#00f","#0ff"],colorValues:[0,5,6,10],class:"heatMap"}
+								makeHeatMap(datalong,options);
+
+								var options={height:300,width:500,tag:"chart4",orientation:0,nticks:100,index:1};
+								makeBarChart(datalong,options);
+
+								var options={Height:400,Width:500,Tag:"chart5",orientation:3,nticks:10,colors:["#f00","#0f0","#00f","#0ff"],padding:10};
+								makeMutipleBarChart(datalong,options);*/
+						});
+				</script>
+				<chart1></chart1>
+				<chart2></chart2>
+				<chart3></chart3>
+				<chart4></chart4>
+				<chart5></chart5>
+		</body>
+</html>
