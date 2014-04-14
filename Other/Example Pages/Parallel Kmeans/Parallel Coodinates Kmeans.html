@@ -2,8 +2,9 @@
 <html>
 		<head>
 				<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-				<title>Parallel Coordinates Test</title>
+				<title>Parallel Coordinates with Kmeans Example</title>
 				<style type="text/css">
+
 .parallelCoordinates{
 	font: 10px sans-serif;
 }
@@ -45,9 +46,11 @@
 				<script type="text/javascript" src="Analysis.js"></script>
 				<script type="text/javascript" src="Parallel Coordinates.js"></script>
 				<script type="text/javascript">
-						d3.csv("./random.csv", function(datalong) {
-								var options={height:500,width:750,margins:[30,10,10,10],tag:"chart1",allowBrush:true,runkmeans:true,runEM:false,k:3,epsEM:.001,iterations:1,orderData:true};
-								makeParallel(datalong,options);
+						d3.csv("iris.txt", function(datalong) {
+								cdata=convertDataWithClasses(datalong);
+        						data=cdata['data'];
+								var options={height:500,width:750,margins:[30,10,10,10],tag:"chart1",allowBrush:true,runkmeans:true,runEM:false,k:3,iterations:20,orderData:true,axisNames:cdata['names']};
+								makeParallel(data,options);
 						});
 				</script>
 				<chart1></chart1>

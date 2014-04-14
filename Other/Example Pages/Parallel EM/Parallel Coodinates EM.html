@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+				<title>Parallel Coordinates with EM Example</title>
+				<style type="text/css">
+
+.parallelCoordinates{
+	font: 10px sans-serif;
+}
+
+.parallelCoordinates .background path {
+	fill: none;
+	stroke-opacity: .5;
+	shape-rendering: crispEdges;
+}
+
+.parallelCoordinates .foreground path {
+	fill: none;
+	stroke-opacity: .8;
+}
+
+.parallelCoordinates .brush .extent {
+	fill-opacity: .8;
+	stroke: #fff;
+	shape-rendering: crispEdges;
+}
+
+.parallelCoordinates .axis line, .parallelCoordinates .axis path {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.parallelCoordinates .axis text {
+	text-shadow: 0 1px 0 #fff;
+}
+
+		</style>
+		</head>
+
+		<body>
+				<script type="text/javascript" src="d3.js"></script>
+				<script type="text/javascript" src="d3.csv.js"></script>
+				<script type="text/javascript" src="Convert Data.js"></script>
+				<script type="text/javascript" src="Analysis.js"></script>
+				<script type="text/javascript" src="Parrallel Coordinates.js"></script>
+				<script type="text/javascript">
+						d3.csv("iris.txt", function(datalong) {
+								cdata=convertDataWithClasses(datalong);
+        						data=cdata['data'];
+								var options={height:500,width:750,margins:[30,10,10,10],tag:"chart1",allowBrush:true,runkmeans:false,runEM:true,k:3,epsEM:.0001,iterations:1,maxiterations:100,basicEMLabels:false,orderData:true,axisNames:cdata['names']}
+								makeParallel(data,options);
+						});
+				</script>
+				<chart1></chart1>
+		</body>
+</html>

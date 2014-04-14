@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+				<title>Scatter Plot Example</title>
+		</head>
+
+		<body>
+				<script type="text/javascript" src="d3.js"></script>
+				<script type="text/javascript" src="d3.csv.js"></script>
+				<script type="text/javascript" src="Convert Data.js"></script>
+				<script type="text/javascript" src="Scatter Plot.js"></script>
+				<script type="text/javascript" src="Analysis.js"></script>
+				<script type="text/javascript">
+						d3.csv("blah.csv", function(datalong) {
+
+								var options={height:500,width:500,margins:[10,10,10,10],tag:"chart1",class:"scatterPlot",nticks:10,showleastsquares:true,power:1,numPlottingPoints:50,interColor:"#00F"}
+								makeScatterPlot(datalong,options);
+						});
+				</script>
+				<chart1></chart1>
+		</body>
+</html>
